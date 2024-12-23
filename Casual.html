@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator Conversation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            font-size: 3em;
+            color: #2e8b57;
+        }
+        .instruction {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3cb371;
+        }
+        .output {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elevator Conversation</h1>
+    <p class="instruction">In English, you would say, "Hello, how are you?"</p>
+    
+    <button id="languageButton">Language</button>
+    <button id="answerButton">Answer</button>
+    
+    <div class="output" id="outputText"></div>
+
+    <script>
+        const languages = [
+            { name: "German", phrase: "Guten Tag, wie geht's?", phonetic: "(GOO-ten tahk, vee GEHTS)" },
+            { name: "Spanish", phrase: "Hola, ¿cómo estás?", phonetic: "(OH-lah, KOH-moh ehs-TAHS)" },
+            { name: "French", phrase: "Bonjour, comment ça va?", phonetic: "(bohn-ZHOOR, koh-MOHN sah vah)" },
+            { name: "Italian", phrase: "Ciao, come stai?", phonetic: "(chow, KOH-meh STY)" },
+            { name: "Mandarin", phrase: "你好, 你好吗?", phonetic: "(nee-HAO, nee how-MA)" },
+            { name: "Russian", phrase: "Здравствуйте, как дела?", phonetic: "(ZDRAH-stvooy-tyeh, kahk dye-LAH)" },
+            { name: "Japanese", phrase: "こんにちは, お元気ですか?", phonetic: "(koh-nee-chee-WAH, oh-GEHN-kee des-ka)" },
+            { name: "Portuguese", phrase: "Olá, como vai?", phonetic: "(oh-LAH, KOH-moo VY)" },
+            { name: "Arabic", phrase: "مرحباً، كيف حالك؟", phonetic: "(mar-ha-BAN, kay-fa ha-LUK)" },
+            { name: "Korean", phrase: "안녕하세요, 어떻게 지내세요?", phonetic: "(ahn-nyong-HAH-seh-yo, uh-TUH-keh JEE-neh-seh-yo)" }
+        ];
+        
+        let currentIndex = 0;
+
+        document.getElementById("languageButton").addEventListener("click", () => {
+            const language = languages[currentIndex];
+            document.getElementById("outputText").innerText = language.name;
+            currentIndex = (currentIndex + 1) % languages.length;
+        });
+
+        document.getElementById("answerButton").addEventListener("click", () => {
+            const language = languages[(currentIndex - 1 + languages.length) % languages.length];
+            document.getElementById("outputText").innerText = `${language.name}: ${language.phrase} ${language.phonetic}`;
+        });
+    </script>
+</body>
+</html>

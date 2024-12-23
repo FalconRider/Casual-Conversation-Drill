@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casual Conversation Bits</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e6f3ff; /* Changed from green to blue theme */
+            color: #333;
+        }
+        h1 {
+            font-size: 3em;
+            color: #0077be; /* Adjusted color to match blue theme */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .instruction {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            background-color: #0077be; /* Adjusted color to match blue theme */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0094ff; /* Darker blue on hover */
+        }
+        .output {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #333;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Casual Conversation Bits</h1>
+    <p class="instruction">Hello, Thanks, Please, and Goodbye</p>
+    
+    <button id="languageButton">Language</button>
+    <button id="answerButton">Answer</button>
+    
+    <div class="output" id="outputText"></div>
+
+    <script>
+        const languages = [
+            { name: "German", phrase: "Hallo, Danke, Bitte, Auf Wiedersehen", phonetic: "(HAH-loh, DAN-ke, BIT-te, OWF VEE-der-zye-zen)" },
+            { name: "Spanish", phrase: "Hola, Gracias, Por favor, Adiós", phonetic: "(OH-lah, GRAH-see-ahs, por fah-VOR, ah-dee-OHS)" },
+            { name: "French", phrase: "Bonjour, Merci, S'il vous plaît, Au revoir", phonetic: "(bohn-ZHOOR, mair-SEE, see voo PLAY, oh ruh-VWAHR)" },
+            { name: "Italian", phrase: "Ciao, Grazie, Per favore, Arrivederci", phonetic: "(chow, GRAH-tsee-eh, per fah-VOH-reh, ahr-ree-veh-DAIR-chee)" },
+            { name: "Mandarin", phrase: "你好, 谢谢, 请, 再见", phonetic: "(nee-HAO, shyeh-shyeh, ching, zai-JYEN)" },
+            { name: "Russian", phrase: "Привет, Спасибо, Пожалуйста, До свидания", phonetic: "(pree-VYET, spa-SEE-bo, pah-ZHAH-luysta, doh svee-DAH-nee-ya)" },
+            { name: "Japanese", phrase: "こんにちは, ありがとう, お願いします, さようなら", phonetic: "(koh-nee-chee-WAH, ah-ree-ga-TOH, oh-NEH-gai-shi-MAS, say-oh-NAH-rah)" },
+            { name: "Portuguese", phrase: "Olá, Obrigado, Por favor, Adeus", phonetic: "(oh-LAH, oh-bree-GAH-doo, por fah-VOR, ah-DEH-oosh)" },
+            { name: "Arabic", phrase: "مرحبًا, شكرًا, من فضلك, وداعًا", phonetic: "(mar-ha-BAN, shuk-RAN, min fad-LAK, wa-DA-an)" },
+            { name: "Ukrainian", phrase: "Привіт, Дякую, Будь ласка, До побачення", phonetic: "(pree-VEET, dyah-KOO-yoo, bood LAH-ska, do po-BAH-chen-nya)" },
+            { name: "Afrikaans", phrase: "Hallo, Dankie, Asseblief, Totsiens", phonetic: "(HAH-loh, DAN-kee, AH-seh-bleef, TOT-seens)" }
+        ];
+        
+        let currentIndex = 0;
+
+        document.getElementById("languageButton").addEventListener("click", () => {
+            const language = languages[currentIndex];
+            document.getElementById("outputText").innerText = language.name;
+            currentIndex = (currentIndex + 1) % languages.length;
+        });
+
+        document.getElementById("answerButton").addEventListener("click", () => {
+            const language = languages[(currentIndex - 1 + languages.length) % languages.length];
+            document.getElementById("outputText").innerText = `${language.name}: ${language.phrase} ${language.phonetic}`;
+        });
+    </script>
+</body>
+</html>

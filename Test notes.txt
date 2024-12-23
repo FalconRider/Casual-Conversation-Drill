@@ -1,0 +1,23 @@
+I'm testing capabilities  of 6 AI engine versions  4 companies  plus double versions of 2
+
+This test involves taking a previously written webpage, the green page, and making a bunch of changes.
+
+I'm familiar with Open AI's capabilities  on both it's pay and Free ChatGPT 4.0
+Both could easily handle this coding task so I did not try them. 
+The original page was by them.
+
+Copilot-  off of Google  -  didn't see a way to enter a prior written  file.
+but this is my goto now for simple stupid questions. ie What was Hannibals hair color?
+
+Copilot by icon  - no paperclip - asked got response copy included
+
+Claude -   found it not a good as my other choices in the past, skipping it
+
+GROK now free, no  paperclip but was able to handle entry of the original file as a cut and paste,
+and then the instruction on the next entry
+
+Total time involved for GROK  was seconds.
+Total time for me to think this up, write out my spec on notepad, generate the code test it and upload my results to GitHub might be a hour.  
+
+It produced the blue page in one run and it works great. Thanks Elon
+

@@ -1,0 +1,29 @@
+Can you take the program I've entered at the paperclip and 
+make some changes.
+
+It functions as a language learning drill in few phrases in  a number of languages. 
+
+
+Change the color theme from a green to a blue.
+
+
+Change the title
+"Elevator Conversation"
+
+to "Casual Conversation bits"
+
+
+Change the lines 
+
+
+"In English, you would say, "Hello, how are you?"
+
+to 
+"Hello, Thanks, Please and Goodbye"
+
+change the phrases it drills in to those phases including phonetics.
+
+Drop Korean as a language. Add Ukrainian and Afrikaans languages and all their functionality  under the new rules
+
+
+
